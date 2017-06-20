@@ -54,12 +54,9 @@ public class KhanaKhazana extends AppCompatActivity  implements RVFoodAdapter.Cl
             }
         });
         fooditem = new ArrayList<>();
-        fooditem.add(new FoodItem("Rajma Chawal", 100, "lalalala"));
-        fooditem.add(new FoodItem("Dal Makhni", 100, "lalalala"));
-        fooditem.add(new FoodItem("Naan", 100, "lalalala"));
-        fooditem.add(new FoodItem("Chole Chawal", 100, "lalalala"));
-        fooditem.add(new FoodItem("Chowmien", 100, "lalalala"));
-        fooditem.add(new FoodItem("Pao Bhaji", 100, "lalalala"));
+        fooditem.add(new FoodItem("Skip Line", 1000, "lalalala"));
+        fooditem.add(new FoodItem("Private Tour", 2000, "lalalala"));
+        fooditem.add(new FoodItem("Opera", 3000, "lalalala"));
 
         RVFoodAdapter adapter = new RVFoodAdapter(this, fooditem);
         adapter.setClickListner(this);
@@ -72,22 +69,13 @@ public class KhanaKhazana extends AppCompatActivity  implements RVFoodAdapter.Cl
 
         switch (position) {
             case 0:
-                db.addOrder(new Order("Khana Khazana", "Rajma Chawal", 1, 100));
+                db.addOrder(new Order("Skydiving", "Skip Line", 1, 1000));
                 break;
             case 1:
-                db.addOrder(new Order("Khana Khazana", "Dal Makhni", 1, 100));
+                db.addOrder(new Order("Skydiving", "Private Tour", 1, 2000));
                 break;
             case 2:
-                db.addOrder(new Order("Khana Khazana", "Naan", 1, 100));
-                break;
-            case 3:
-                db.addOrder(new Order("Khana Khazana", "Chole Chawal", 1, 100));
-                break;
-            case 4:
-                db.addOrder(new Order("Khana Khazana", "Chowmien", 1, 100));
-                break;
-            case 5:
-                db.addOrder(new Order("Dominos", "Pao Bhaji", 1, 100));
+                db.addOrder(new Order("Skydiving", "Opera", 1, 3000));
                 break;
 
         }

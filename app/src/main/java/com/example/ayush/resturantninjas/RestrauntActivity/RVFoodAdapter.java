@@ -78,18 +78,13 @@ public class RVFoodAdapter extends RecyclerView.Adapter<RVFoodAdapter.FoodViewHo
         holder.ratemoney.setText(String.valueOf(fooditem.get(i).Price));
         switch (i)
         {
-            case 0: holder.productImage.setImageResource(R.drawable.bebe);
+            case 0: holder.productImage.setImageResource(R.drawable.skipline);
                 break;
-            case 1: holder.productImage.setImageResource(R.drawable.bebe);
+            case 1: holder.productImage.setImageResource(R.drawable.privatetour);
                 break;
-            case 2: holder.productImage.setImageResource(R.drawable.bebe);
+            case 2: holder.productImage.setImageResource(R.drawable.opera);
                 break;
-            case 3: holder.productImage.setImageResource(R.drawable.bebe);
-                break;
-            case 4: holder.productImage.setImageResource(R.drawable.bebe);
-                break;
-            case 5: holder.productImage.setImageResource(R.drawable.bebe);
-                break;
+
         }
 
     }
@@ -144,13 +139,9 @@ public class RVFoodAdapter extends RecyclerView.Adapter<RVFoodAdapter.FoodViewHo
                 }
             });
             fooditem=new ArrayList<>();
-            fooditem.add(new FoodItem("Chicken Grill",100,"lalalala"));
-            fooditem.add(new FoodItem("McAloo",100,"lalalala"));
-            fooditem.add(new FoodItem("McChicken",100,"lalalala"));
-            fooditem.add(new FoodItem("McPuff",100,"lalalala"));
-            fooditem.add(new FoodItem("McPaneer",100,"lalalala"));
-            fooditem.add(new FoodItem("McSwirl",100,"lalalala"));
-
+            fooditem.add(new FoodItem("Skip Line", 1000, "lalalala"));
+            fooditem.add(new FoodItem("Private Tour", 2000, "lalalala"));
+            fooditem.add(new FoodItem("Opera", 3000, "lalalala"));
             RVFoodAdapter adapter=new RVFoodAdapter(this,fooditem);
             adapter.setClickListner(this);
             rv.setAdapter(adapter);
@@ -161,17 +152,14 @@ public class RVFoodAdapter extends RecyclerView.Adapter<RVFoodAdapter.FoodViewHo
 
             switch (position)
             {
-                case 0:db.addOrder(new Order("McDonalds","Chicken Grll",1,100));
+                case 0:
+                    db.addOrder(new Order("Hotel Trident", "Skip Line", 1, 1000));
                     break;
-                case 1: db.addOrder(new Order("McDonalds","McAloo",1,100));
+                case 1:
+                    db.addOrder(new Order("Hotel Trident", "Private Tour", 1, 2000));
                     break;
-                case 2: db.addOrder(new Order("McDonalds","McChicken",1,100));
-                    break;
-                case 3:db.addOrder(new Order("McDonalds","McPuff",1,100));
-                    break;
-                case 4: db.addOrder(new Order("McDonalds","McPaneer",1,100));
-                    break;
-                case 5: db.addOrder(new Order("McDonalds","McSwirl",1,100));
+                case 2:
+                    db.addOrder(new Order("Hotel Trident", "Opera", 1, 3000));
                     break;
 
             }

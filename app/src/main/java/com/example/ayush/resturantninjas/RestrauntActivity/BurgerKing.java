@@ -54,12 +54,11 @@ public class BurgerKing extends AppCompatActivity implements RVBurgerKingAdapter
             }
         });
         fooditem=new ArrayList<>();
-        fooditem.add(new FoodItem("Chicken Grill",100,"lalalala"));
-        fooditem.add(new FoodItem("McAloo",100,"lalalala"));
-        fooditem.add(new FoodItem("McChicken",100,"lalalala"));
-        fooditem.add(new FoodItem("McPuff",100,"lalalala"));
-        fooditem.add(new FoodItem("McPaneer",100,"lalalala"));
-        fooditem.add(new FoodItem("McSwirl",100,"lalalala"));
+        fooditem.add(new FoodItem("Deluxe Room",1000,"lalalala"));
+        fooditem.add(new FoodItem("Queen Size",2000,"lalalala"));
+        fooditem.add(new FoodItem("King Size",3000,"lalalala"));
+        fooditem.add(new FoodItem("Suite",4000,"lalalala"));
+
 
         RVBurgerKingAdapter adapter=new RVBurgerKingAdapter(this,fooditem);
         adapter.setClickListner(this);
@@ -71,18 +70,15 @@ public class BurgerKing extends AppCompatActivity implements RVBurgerKingAdapter
 
         switch (position)
         {
-            case 0:db.addOrder(new Order("McDonalds","Chicken Grll",1,100));
+            case 0:db.addOrder(new Order("Hotel Trident","Delux Room",1,1000));
                 break;
-            case 1: db.addOrder(new Order("McDonalds","McAloo",1,100));
+            case 1: db.addOrder(new Order("Hotel Trident","Queen Size",1,2000));
                 break;
-            case 2: db.addOrder(new Order("McDonalds","McChicken",1,100));
+            case 2: db.addOrder(new Order("Hotel Trident","King Size",1,3000));
                 break;
-            case 3:db.addOrder(new Order("McDonalds","McPuff",1,100));
+            case 3:db.addOrder(new Order("Hotel Trident","Suite",1,4000));
                 break;
-            case 4: db.addOrder(new Order("McDonalds","McPaneer",1,100));
-                break;
-            case 5: db.addOrder(new Order("McDonalds","McSwirl",1,100));
-                break;
+
 
         }
         Snackbar.make(view, "Your Order is Added ", Snackbar.LENGTH_LONG)

@@ -43,17 +43,17 @@ public class RVCartAdapter extends RecyclerView.Adapter<RVCartAdapter.OrderViewH
         holder.quantity.setText(String.valueOf(orderList.get(i).qty));
         holder.oneprice.setText(String.valueOf(orderList.get(i).priceone));
         holder.totalprice.setText(String.valueOf(orderList.get(i).totalprice));
-        if(orderList.get(i).stallname.equals("Dominos"))
+        if(orderList.get(i).stallname.equals("Hotel Leela"))
         {
-            holder.resturantphoto.setImageResource(R.drawable.pizza1);
+            holder.resturantphoto.setImageResource(R.drawable.hotel_main);
         }
-        if(orderList.get(i).stallname.equals("Khana Khazana"))
+        if(orderList.get(i).stallname.equals("Skydiving"))
         {
-            holder.resturantphoto.setImageResource(R.drawable.bebe);
+            holder.resturantphoto.setImageResource(R.drawable.acttivites_main);
         }
-        if(orderList.get(i).stallname.equals("McDonalds"))
+        if(orderList.get(i).stallname.equals("Hotel Trident"))
         {
-            holder.resturantphoto.setImageResource(R.drawable.burger2);
+            holder.resturantphoto.setImageResource(R.drawable.hotel4);
         }
 
     }

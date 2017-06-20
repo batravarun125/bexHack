@@ -67,9 +67,9 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.ClickLi
 
         if( s==null|| s.isEmpty()) {
             resturants = new ArrayList<>();
-            resturants.add(new Resturant("bebe", "Dominos", 0));
-            resturants.add(new Resturant("bebe", "Khana Khazana", 0));
-            resturants.add(new Resturant("bebe", "Mc Donalds", 0));
+            resturants.add(new Resturant("bebe", "Hotel Leela", 0));
+            resturants.add(new Resturant("bebe", "Skydiving", 0));
+            resturants.add(new Resturant("bebe", "Hotel Trident", 0));
         }
         else{
             resturants=new ArrayList<>();
@@ -149,11 +149,11 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.ClickLi
 
             }
                 Log.d("lalalalala", String.valueOf(MyApp.getInstance().regionNameList.size()));
-                    Log.d("lalala", "Iside Dominos");
+                    Log.d("lalala", "Iside Hotel Leela");
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     intent.putExtra("rglist", mylistt);
                     startActivity(intent);
-                    MyApp.getInstance().showNotification("Welcome to Dominos");
+                    MyApp.getInstance().showNotification("Welcome to Hotel Leela");
 
 
                 //Toast.makeText(MainActivity.this, "Welcome to " + myRegionName, Toast.LENGTH_SHORT).show();

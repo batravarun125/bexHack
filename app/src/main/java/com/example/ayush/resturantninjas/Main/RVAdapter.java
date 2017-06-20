@@ -65,11 +65,11 @@ public class RVAdapter extends RecyclerView.Adapter<RVAdapter.PersonViewHolder>{
         personViewHolder.resturantname.setText(resturants.get(i).name);
         personViewHolder.resturantdistance.setText(String.valueOf(resturants.get(i).distance));
         if(i==1)
-        personViewHolder.resturantPhoto.setImageResource(R.drawable.bebe);
+        personViewHolder.resturantPhoto.setImageResource(R.drawable.acttivites_main);
         if(i==0)
-            personViewHolder.resturantPhoto.setImageResource(R.drawable.pizza1);
+            personViewHolder.resturantPhoto.setImageResource(R.drawable.hotel_main);
         if(i==2)
-            personViewHolder.resturantPhoto.setImageResource(R.drawable.burger0);
+            personViewHolder.resturantPhoto.setImageResource(R.drawable.hotel4);
 
 
 

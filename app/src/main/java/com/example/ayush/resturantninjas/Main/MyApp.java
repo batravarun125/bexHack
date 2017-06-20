@@ -195,9 +195,9 @@ public class MyApp extends Application implements BeaconConsumer {
         regionList = new ArrayList<>();
         regionNameList = new ArrayList<>();
 
-        String res_1 = "Dominos";
-        String res_2 =  "Mc Donalds";
-        String res_3 = "Khaana Khazaana";
+        String res_1 = "Hotel Leela";
+        String res_2 =  "Hotel Trident";
+        String res_3 = "Skydiving";
 
         ssnRegionMap.put("0x0117c55fc452",new Region(res_1,nameSpaceId,Identifier.parse("0x0117c55fc452"),null));
         ssnRegionMap.put("0x0117c555c65f",new Region(res_2,nameSpaceId,Identifier.parse("0x0117c555c65f"),null));

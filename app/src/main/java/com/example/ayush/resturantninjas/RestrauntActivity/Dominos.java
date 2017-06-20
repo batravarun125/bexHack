@@ -54,12 +54,11 @@ public class Dominos extends AppCompatActivity implements RVDominosAdapter.Click
             }
         );
         fooditem=new ArrayList<>();
-        fooditem.add(new FoodItem("Choclate Pizza",100,"lalalala"));
-        fooditem.add(new FoodItem("Paneer Pizza",100,"lalalala"));
-        fooditem.add(new FoodItem("Cheeseburst",100,"lalalala"));
-        fooditem.add(new FoodItem("Mexican green Wave",100,"lalalala"));
-        fooditem.add(new FoodItem("Spicy Chiecken",100,"lalalala"));
-        fooditem.add(new FoodItem("Random Pizza",100,"lalalala"));
+        fooditem.add(new FoodItem("Deluxe Room",1000,"lalalala"));
+        fooditem.add(new FoodItem("Queen Size",2000,"lalalala"));
+        fooditem.add(new FoodItem("King Size",3000,"lalalala"));
+        fooditem.add(new FoodItem("Suite",4000,"lalalala"));
+
 
         RVDominosAdapter adapter=new RVDominosAdapter(this,fooditem);
         adapter.setClickListner(this);
@@ -86,17 +85,13 @@ public class Dominos extends AppCompatActivity implements RVDominosAdapter.Click
     public void ItemClicked(View view, int position) {
         switch (position)
         {
-            case 0:db.addOrder(new Order("Dominos","Chocolate Pizza",1,100));
+            case 0:db.addOrder(new Order("Hotel Leela","Delux Room",1,1000));
                     break;
-            case 1: db.addOrder(new Order("Dominos","Paneer Pizza",1,100));
+            case 1: db.addOrder(new Order("Hotel Leela","Queen Size",1,2000));
                     break;
-            case 2: db.addOrder(new Order("Dominos","Cheese burst",1,100));
+            case 2: db.addOrder(new Order("Hotel Leela","King Size",1,3000));
                     break;
-            case 3:db.addOrder(new Order("Dominos","Mexican Green Wave",1,100));
-                break;
-            case 4: db.addOrder(new Order("Dominos","Spicy Chicken",1,100));
-                break;
-            case 5: db.addOrder(new Order("Dominos","Bruger Pizza",1,100));
+            case 3:db.addOrder(new Order("Hotel Leela","Suite",1,4000));
                 break;
 
         }

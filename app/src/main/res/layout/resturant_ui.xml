@@ -14,7 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="160dp"
         android:layout_weight="3"
-        android:background="@color/bgTitleLeft"
+        android:background="@color/colorPrimary"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:paddingBottom="20dp"
@@ -25,7 +25,7 @@
         <ImageView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:src="@drawable/bebe"
+            android:src="@drawable/hotel1"
             android:id="@+id/resturantphoto"/>
 
 
@@ -61,7 +61,7 @@
             android:singleLine="true"
             android:textColor="@android:color/black"
             android:textSize="18sp"
-            android:text="DOMINOS PIZZA"/>
+            android:text="Hotel Leela Rooms"/>
 
         <ImageView
             android:id="@+id/title_from_to_dots_divider"

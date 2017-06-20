@@ -29,15 +29,15 @@
 
         <activity
             android:name=".RestrauntActivity.Dominos"
-            android:label="Dominos"
+            android:label="Hotel Leela"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RestrauntActivity.KhanaKhazana"
-            android:label="Khana Khazana"
+            android:label="Skydiving"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".RestrauntActivity.BurgerKing"
-            android:label="Mc Donalds"
+            android:label="Hotel Trident"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".RestrauntActivity.CartActivity" />
         <activity android:name=".RestrauntActivity.FinalActivity" />

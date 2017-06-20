@@ -1,7 +1,7 @@
 <resources>
-    <string name="app_name">ResturantNinjas</string>
+    <string name="app_name">ExpediaNinjas</string>
     <string name="title_activity_click">ClickActivity</string>
-    <string name="res_1">Dominos</string>
-    <string name="res_2">Mc Donalds</string>
-    <string name="res_3">Khaana Khazaana</string>
+    <string name="res_1">Hotel Leela</string>
+    <string name="res_2">Hotel Trident</string>
+    <string name="res_3">Skydiving</string>
 </resources>
