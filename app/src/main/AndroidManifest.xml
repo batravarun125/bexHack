@@ -29,5 +29,6 @@
         <activity android:name=".RestrauntActivity.BurgerKing" android:label="Mc Donalds" android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".RestrauntActivity.CartActivity"/>
         <activity android:name=".RestrauntActivity.FinalActivity"/>
+
     </application>
 </manifest>
