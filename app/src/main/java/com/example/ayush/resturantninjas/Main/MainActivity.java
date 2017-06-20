@@ -11,6 +11,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -61,18 +62,24 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.ClickLi
         RecyclerView rv = (RecyclerView)findViewById(R.id.rv);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
-
-        resturants = new ArrayList<>();
-        resturants.add(new Resturant("bebe","Dominos", 0));
-        resturants.add(new Resturant("bebe","Khana Khazana", 0));
-        resturants.add(new Resturant("bebe","Mc Donalds", 0));
-
+        String s = getIntent().getStringExtra("rglist");
+        if(TextUtils.isEmpty(s)) {
+            resturants = new ArrayList<>();
+            resturants.add(new Resturant("bebe", "Dominos", 0));
+            resturants.add(new Resturant("bebe", "Khana Khazana", 0));
+            resturants.add(new Resturant("bebe", "Mc Donalds", 0));
+        }
+        else{
+            resturants=new ArrayList<>();
+            resturants.add(new Resturant("bebe", "ABC", 0));
+        }
         RVAdapter adapter = new RVAdapter(this,resturants);
         adapter.setClickListner(this);
         rv.setAdapter(adapter);
 
 
     }
+
 
 
     @Override
@@ -122,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.ClickLi
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        int id=  item.getItemId();
+        int id = item.getItemId();
         if(id==R.id.action_refresh){
             refresh();
         }
@@ -135,7 +142,8 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.ClickLi
             Log.d("lalalalala", String.valueOf(MyApp.getInstance().regionNameList.size()));
             if(myRegionName.equals("Dominos")){
                 Log.d("lalala","Iside Dominos");
-                Intent intent = new Intent(getApplicationContext(),Dominos.class);
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                intent.putExtra("rglist",myRegionName);
                 startActivity(intent);
                 MyApp.getInstance().showNotification("Welcome to Dominos");
             }
@@ -150,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.ClickLi
             else if(myRegionName.equals("Khaana Khazaana")){
 
                 Log.d("lalala","Inside Khaana khazaana");
-                Intent intent = new Intent(getApplicationContext(),KhanaKhazana.class);
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
                 startActivity(intent);
                 MyApp.getInstance().showNotification("Welcome to Khaana Khazaana");
 
