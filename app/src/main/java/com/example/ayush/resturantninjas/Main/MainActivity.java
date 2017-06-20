@@ -62,8 +62,10 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.ClickLi
         RecyclerView rv = (RecyclerView)findViewById(R.id.rv);
         LinearLayoutManager llm = new LinearLayoutManager(this);
         rv.setLayoutManager(llm);
-        String s = getIntent().getStringExtra("rglist");
-        if(TextUtils.isEmpty(s)) {
+        ArrayList<String> s = new ArrayList<String>();
+        s = getIntent().getStringArrayListExtra("rglist");
+
+        if( s==null|| s.isEmpty()) {
             resturants = new ArrayList<>();
             resturants.add(new Resturant("bebe", "Dominos", 0));
             resturants.add(new Resturant("bebe", "Khana Khazana", 0));
@@ -71,7 +73,9 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.ClickLi
         }
         else{
             resturants=new ArrayList<>();
-            resturants.add(new Resturant("bebe", "ABC", 0));
+            for(int i=0;i<s.size();i++) {
+                resturants.add(new Resturant("bebe", s.get(i), 0));
+            }
         }
         RVAdapter adapter = new RVAdapter(this,resturants);
         adapter.setClickListner(this);
@@ -138,37 +142,24 @@ public class MainActivity extends AppCompatActivity implements RVAdapter.ClickLi
     public  void refresh(){
         if (!MyApp.getInstance().regionList.isEmpty()){
             int size = MyApp.getInstance().regionList.size();
-            String myRegionName = MyApp.getInstance().regionNameList.get(size-1);
-            Log.d("lalalalala", String.valueOf(MyApp.getInstance().regionNameList.size()));
-            if(myRegionName.equals("Dominos")){
-                Log.d("lalala","Iside Dominos");
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                intent.putExtra("rglist",myRegionName);
-                startActivity(intent);
-                MyApp.getInstance().showNotification("Welcome to Dominos");
-            }
-
-            else if(myRegionName.equals("Mc Donalds")){
-                Log.d("lalala","Iside Mc");
-                Intent intent = new Intent(getApplicationContext(),BurgerKing.class);
-                startActivity(intent);
-                MyApp.getInstance().showNotification("Welcome to Burger King");
+            ArrayList<String> mylistt = new ArrayList<String>();
+            for(int i = 0;i<size;i++) {
+                String myRegionName = MyApp.getInstance().regionNameList.get(i);
+                mylistt.add(myRegionName);
 
             }
-            else if(myRegionName.equals("Khaana Khazaana")){
+                Log.d("lalalalala", String.valueOf(MyApp.getInstance().regionNameList.size()));
+                    Log.d("lalala", "Iside Dominos");
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    intent.putExtra("rglist", mylistt);
+                    startActivity(intent);
+                    MyApp.getInstance().showNotification("Welcome to Dominos");
 
-                Log.d("lalala","Inside Khaana khazaana");
-                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-                startActivity(intent);
-                MyApp.getInstance().showNotification("Welcome to Khaana Khazaana");
+
+                //Toast.makeText(MainActivity.this, "Welcome to " + myRegionName, Toast.LENGTH_SHORT).show();
+
 
             }
-
-
-            Toast.makeText(MainActivity.this, "Welcome to "+myRegionName, Toast.LENGTH_SHORT).show();
-
-
-
         }
-    }
+
 }
