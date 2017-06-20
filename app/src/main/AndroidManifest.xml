@@ -6,29 +6,42 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
-        android:allowBackup="true"
         android:name=".Main.MyApp"
+        android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Main.MainActivity">
+        <activity android:name=".Main.SplashScreen"
+            android:theme="@style/AppTheme.NoActionBar">
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".RestrauntActivity.Dominos" android:label="Dominos" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".RestrauntActivity.KhanaKhazana" android:label="Khana Khazana" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".RestrauntActivity.BurgerKing" android:label="Mc Donalds" android:theme="@style/AppTheme.NoActionBar"/>
-        <activity android:name=".RestrauntActivity.CartActivity"/>
-        <activity android:name=".RestrauntActivity.FinalActivity"/>
 
+        <activity
+            android:name=".RestrauntActivity.Dominos"
+            android:label="Dominos"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RestrauntActivity.KhanaKhazana"
+            android:label="Khana Khazana"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".RestrauntActivity.BurgerKing"
+            android:label="Mc Donalds"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".RestrauntActivity.CartActivity" />
+        <activity android:name=".RestrauntActivity.FinalActivity" />
+        <activity android:name=".Main.MainActivity"></activity>
     </application>
+
 </manifest>
